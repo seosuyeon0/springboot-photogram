@@ -1,5 +1,6 @@
 package com.cos.photogramstart.web;
 
+import com.cos.photogramstart.domain.user.User;
 import com.cos.photogramstart.web.dto.auth.SignupDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -22,6 +23,8 @@ public class AuthController {
     @PostMapping("/auth/signup")
     public String signup(SignupDto signupDto) {
         log.info(signupDto.toString());
+        User user= signupDto.toEntity();
+        log.info(user.toString());
         return "/auth/signin";
     }
 }
