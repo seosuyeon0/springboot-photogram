@@ -12,6 +12,6 @@ public class CMRespDto<T> {
 
     private int code; //1성공 -1실패
     private String message;
-    private T date;
+    private T data;
 
 }
