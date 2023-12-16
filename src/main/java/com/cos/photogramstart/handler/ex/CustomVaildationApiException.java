@@ -13,6 +13,11 @@ public class CustomVaildationApiException extends RuntimeException{
         return errorMap;
     }
 
+    public CustomVaildationApiException(String message) {
+        super(message);
+        // this.message = message;
+    }
+
     public CustomVaildationApiException(String message, Map<String,String> errorMap) {
         super(message);
     // this.message = message;

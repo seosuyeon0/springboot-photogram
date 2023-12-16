@@ -16,8 +16,9 @@ function update(userid, event) {
  console.log("성공", res);
  location.href = `/user/${userid}`;
  }).fail(error=>{
-       alert(JSON.stringify(error.responseJSON.data));
-      // alert(error.responseJSON.data);
-         console.log("실패", error.responseJSON.data);
+ if(error.data == null){
+  alert(error.responseJSON.message);
+ }else{alert(JSON.stringify(error.responseJSON.data));
+ }
          });
 }
